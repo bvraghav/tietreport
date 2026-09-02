@@ -1,0 +1,103 @@
+name: Release Package (Git Flow)
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '[0-9]+.[0-9]+*'
+
+jobs:
+  package:
+    name: Build CTAN Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Version: $VERSION"
+
+      - name: Create package structure
+        run: |
+          mkdir -p tietreport/doc/examples
+
+          # Copy class file and license to root
+          cp tietreport.cls tietreport/
+          cp LICENSE tietreport/
+
+          # Copy documentation to doc/
+          cp README.md tietreport/doc/
+
+          # Copy examples to doc/examples/
+          cp sample-report.tex tietreport/doc/examples/
+          cp sample-report-raw.tex tietreport/doc/examples/
+          cp overleaf-template.tex tietreport/doc/examples/
+          cp references.bib tietreport/doc/examples/
+
+      - name: Create tar.gz archive
+        run: |
+          tar -czf \
+            tietreport-${{ steps.version.outputs.version }}.tar.gz \
+            tietreport/
+          ls -lh tietreport-${{ steps.version.outputs.version }}.tar.gz
+
+      - name: Create release notes
+        run: |
+          cat > RELEASE_NOTES.md << 'EOF'
+          # tietreport ${{ steps.version.outputs.version }}
+
+          CTAN-ready package for TIET university report LaTeX class.
+
+          ## Package Contents
+
+          - `tietreport.cls` — Document class file
+          - `LICENSE` — MIT license
+          - `doc/README.md` — Documentation
+          - `doc/examples/` — Example templates and references
+
+          ## Installation
+
+          Extract to your TeX tree or upload to CTAN:
+          - Directory: **macros**
+          - File: `tietreport-${{ steps.version.outputs.version }}.tar.gz`
+
+          ## Features
+
+          - Custom TIET title pages
+          - Professional two-sided layout
+          - Biblatex bibliography integration
+          - Zotero + BetterBibTeX workflow
+          - Overleaf template ready
+
+          ## Quick Start
+
+          ```latex
+          \documentclass{tietreport}
+          ```
+
+          See `doc/README.md` for full documentation.
+          EOF
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            tietreport-${{ steps.version.outputs.version }}.tar.gz
+          body_path: RELEASE_NOTES.md
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Archive package
+        uses: actions/upload-artifact@v3
+        with:
+          name: tietreport-${{ steps.version.outputs.version }}
+          path: tietreport-${{ steps.version.outputs.version }}.tar.gz
+          retention-days: 90
