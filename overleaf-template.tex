@@ -1,0 +1,248 @@
+\documentclass{tietreport}
+
+% Bibliography configuration
+\usepackage[
+  style=alphabetic,
+  backend=biber,
+  sorting=nty,
+  maxnames=5,
+  minnames=3,
+  backref=true,
+  doi=false,
+  isbn=false,
+  url=false,
+  eprint=false
+]{biblatex}
+\addbibresource{references.bib}
+
+%% ==================================================
+%% CUSTOMIZE THESE FIELDS FOR YOUR PROJECT
+%% ==================================================
+
+% Course/Lab header
+\TitlePageHeader{%
+  Your Course Code - Course Title%
+}
+
+% Main project title
+\ProjectTitle{%
+  Your Project Title Here%
+}
+
+% Subtitle or project description
+\ProjectSubTitle{%
+  A Descriptive Subtitle for Your Work%
+}
+
+% Student information (up to 4 students)
+\author{%
+  \texttt{102XXXXXXX} Student Name One \\
+  \texttt{102XXXXXXX} Student Name Two \\
+  \texttt{102XXXXXXX} Student Name Three \\
+  \texttt{102XXXXXXX} Student Name Four%
+}
+
+% Group number, degree, year, program
+\TitlePageSubText{%
+  Group: \texttt{XXXX} BE Third Year, CSE%
+}
+
+% Faculty advisor/guide name
+\AdvisorName{%
+  Dr. Faculty Member Name%
+}
+
+% Evaluation period and department info
+\TitlePageFooterText{{%
+    \large Mid-Semester Evaluation \\[0.2cm]
+    \bfseries Your Department Name%
+  } \\[0.15cm]
+  Thapar Institute of Engineering and
+  Technology, Patiala%
+}
+
+%% ==================================================
+
+\begin{document}
+
+% Generate title page
+\maketitle
+
+% Table of contents (auto-generated from chapters)
+\tableofcontents
+
+% ===== CHAPTER 1: INTRODUCTION =====
+
+\chapter{Introduction}
+
+\section{Background and Context}
+
+Begin your introduction here. Provide context
+for your project and explain why it matters.
+This section should clearly establish the
+problem or opportunity your project addresses.
+
+\subsection{Problem Statement}
+
+Define the specific problem your project
+tackles. Be precise and provide relevant
+background information that helps readers
+understand the scope and significance.
+
+\section{Project Objectives}
+
+\begin{enumerate}
+  \item \textbf{Objective 1:} State your first
+    specific, measurable objective.
+  \item \textbf{Objective 2:} State your second
+    objective.
+  \item \textbf{Objective 3:} State your third
+    objective.
+\end{enumerate}
+
+Document your SMART objectives (Specific,
+Measurable, Achievable, Relevant, Time-bound)
+clearly for your evaluators.
+
+% ===== CHAPTER 2: METHODOLOGY & DESIGN =====
+
+\chapter{Methodology and Design}
+
+\section{System Architecture}
+
+Describe your overall system design. You can
+reference figures and tables in your document:
+
+\subsection{High-Level Design}
+
+Explain the major components and how they
+interact. This section demonstrates your
+understanding of the problem and your
+solution approach.
+
+\subsection{Technical Stack}
+
+\begin{itemize}
+  \item \textbf{Framework/Language:} List your
+    primary technologies.
+  \item \textbf{Database:} Specify database
+    systems if applicable.
+  \item \textbf{Tools:} List development and
+    testing tools used.
+  \item \textbf{Libraries:} Note key libraries
+    or frameworks.
+\end{itemize}
+
+\section{Implementation Details}
+
+\subsection{Module 1: Core Functionality}
+
+Describe the implementation of your first
+major module. Include technical details about
+algorithms, data structures, or design
+patterns used.
+
+\subsection{Module 2: Secondary Features}
+
+Continue documenting your implementation
+by module, demonstrating the complexity and
+depth of your work.
+
+% ===== CHAPTER 3: RESULTS & EVALUATION =====
+
+\chapter{Results and Evaluation}
+
+\section{Testing Methodology}
+
+Describe your testing strategy:
+
+\begin{itemize}
+  \item \textbf{Unit Testing:} How you tested
+    individual components.
+  \item \textbf{Integration Testing:} How you
+    verified components work together.
+  \item \textbf{Performance Testing:} How you
+    measured system performance.
+  \item \textbf{User Testing:} If applicable,
+    how users evaluated your system.
+\end{itemize}
+
+\section{Performance Metrics}
+
+Present your results clearly with tables and
+figures. For example:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|r|r|}
+  \hline
+  \textbf{Metric} & \textbf{Target} &
+  \textbf{Achieved} \\
+  \hline
+  Response Time & $< 100$ms & $85$ms \\
+  \hline
+  Accuracy & $> 95\%$ & $97.2\%$ \\
+  \hline
+  Throughput & $1000$ req/s & $1250$ req/s \\
+  \hline
+\end{tabular}
+\caption{Performance Results Summary}
+\label{tab:performance}
+\end{table}
+
+\section{Analysis}
+
+Analyze your results:
+
+\begin{itemize}
+  \item Did you meet your objectives?
+  \item Where did you exceed expectations?
+  \item What challenges did you encounter?
+  \item How did you resolve them?
+\end{itemize}
+
+% ===== CHAPTER 4: CONCLUSION =====
+
+\chapter{Conclusion}
+
+\section{Summary of Work}
+
+Summarize what you accomplished. Remind
+readers of your objectives and explain which
+ones you met.
+
+\section{Key Findings}
+
+\begin{itemize}
+  \item \textbf{Finding 1:} State a significant
+    result or insight from your work.
+  \item \textbf{Finding 2:} Describe another
+    important discovery.
+  \item \textbf{Finding 3:} Highlight any
+    unexpected results.
+\end{itemize}
+
+\section{Future Work and Recommendations}
+
+Discuss how others could extend or improve
+your work:
+
+\begin{enumerate}
+  \item Potential enhancements to your system
+  \item Alternative approaches worth exploring
+  \item Scalability improvements
+  \item Integration with other systems
+  \item Real-world deployment considerations
+\end{enumerate}
+
+\section{Final Remarks}
+
+Conclude with reflections on what you learned
+and the impact of your work.
+
+% ===== BIBLIOGRAPHY =====
+
+% Print bibliography with heading in TOC
+\printbibliography[heading=bibintoc]
+
+\end{document}
