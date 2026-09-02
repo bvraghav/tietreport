@@ -373,6 +373,92 @@ Proceed to **Step 2**: Strip sample-report-raw.tex to
 create minimal sample-report.tex using
 \documentclass{tietreport}
 
+# Step 4: Enhance sample-report.tex with LaTeX Features
+
+## Prompt
+
+1. Make report.tex into 55-column-width document.
+2. Add a table and a couple of images, to showcase the
+   power of LaTeX.
+3. Finally, add a few references and citations too.
+4. If you have gone so far, use biblatex too and create
+   a .bib file.
+
+## Response
+
+**Step 4 completed: sample-report.tex enhanced with
+LaTeX capabilities, biblatex, and .bib file.**
+
+### Enhancements Made
+
+1. **55-Character Line Wrapping**
+   - Reformatted entire document source to 55-char
+     width
+   - Improves readability in text editors
+   - No structural changes, only text wrapping
+
+2. **LaTeX Professional Features Showcase**
+   - Added "Examples: LaTeX Capabilities" chapter
+   - Performance metrics table with proper alignment
+   - Figure with caption and cross-reference
+   - Demonstrates table/figure best practices
+
+3. **Bibliography Management System**
+   - Created references.bib with 9 sample entries
+   - Books: LaTeX, TeXbook, LaTeX2e manual
+   - Online: ARCore, Zotero, BetterBibTeX
+   - Articles: ARKit, Unity, Blender, Light Est.
+
+4. **Biblatex Configuration**
+   - Replaced natbib with modern biblatex
+   - Style: alphabetic (classic academic format)
+   - Features: backref, year-only dates
+   - Backend: biber (superior to bibtex)
+   - Suppressed: doi, isbn, url, eprint fields
+   - Options: maxnames=5, minnames=3
+
+5. **Zotero + BetterBibTeX Workflow**
+   - Documented Zotero installation
+   - BetterBibTeX auto-export to .bib
+   - Automatic reference synchronization
+   - Clean compile sequence: pdflatex -> biber
+     -> pdflatex
+
+6. **Citation Documentation**
+   - Updated Natbib section to explain biblatex
+   - Demonstrated citation commands:
+     \cite{}, \textcite{}, \parencite{},
+     \footcite{}
+   - Documented Zotero integration for biblatex
+   - Provided step-by-step setup workflow
+
+### Files Created/Modified
+
+- sample-report.tex (enhanced, 55-char wrapped)
+- references.bib (new, 9 sample entries)
+- Compilation: pdflatex -> biber -> pdflatex
+
+### Commits
+
+1. "Wrap sample-report.tex to 55-character width"
+2. "Add LaTeX showcase: tables, figures, citations"
+3. "Add natbib/Zotero documentation"
+4. "Implement biblatex + references.bib for
+   bibliography management"
+
+### Ready for Step 5
+
+Document is now feature-complete with:
+- Professional typography and spacing
+- Custom tietreport documentclass
+- Tables and figures
+- Modern bibliography management
+- Zotero integration guide
+- All wrapped to 55-char readability
+
+Next: Audit PDF compilation and prepare for
+CTAN publication
+
 
 # Step 3: Create tietreport.cls Document Class
 
@@ -471,3 +557,12 @@ audited.**
 Commit tietreport.cls and updated chat.md. Then
 proceed to Step 4: Audit PDF output and verify
 tietreport.cls produces equivalent to sample-report-raw
+
+# TITLE
+
+## Prompt
+
+1. Make report.tex into 55-column-width document.
+2. Add a table and a couple of images, to showcase the
+   power of LaTeX.
+3. Finally, add a few references and citations too.
