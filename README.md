@@ -277,6 +277,11 @@ If you use tietreport in academic work, please cite:
 
 ## Changelog
 
+### Version 1.0.3 (2026-09-03)
+
+- Fix: Update GitHub Actions upload-artifact to v6, v3
+- Fix: Ensure CI/CD workflow uses current action versions
+
 ### Version 1.0.2 (2026-09-03)
 
 - Fix: Update GitHub Actions upload-artifact to v4
