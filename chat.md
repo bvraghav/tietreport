@@ -305,3 +305,16 @@ Ready to:
 
 Compile with `latexmk -pdf sample-report-raw.tex`
 and verify layout matches requirements.
+
+# TITLE
+
+## Prompt
+
+1. The margins are too tight.  I have updated them
+   myself.
+2. I have Abstracted out maketitle command for a
+   simpler document.
+3. I have Adjusted the page headers, formatting, and
+   other page characteristics of report.
+   
+Commit them to git.

@@ -1,5 +1,10 @@
-\documentclass{report}
-\usepackage[margin=0.65in]{geometry}
+\documentclass[twoside,12pt,openright]{report}
+\usepackage[
+  inner=1.5in,
+  outer=1in,
+  top=1.8in,
+  bottom=0.85in
+]{geometry}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{hyperref}
@@ -7,7 +12,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-\begin{document}
 
 % Define Vars
 % -----------------------------------------------------
@@ -55,7 +59,7 @@
 \fancyhf{}
 \fancyhead[LE]{\thepage \quad \TitlePageHeader}
 \fancyhead[RO]{\ProjectTitle \quad \thepage}
-\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
 
 % Configure chapter formatting
@@ -71,41 +75,46 @@
 \assignpagestyle{\chapter}{empty}
 
 
-\begin{titlepage}
-  \thispagestyle{empty}
-  \centering
-  \vspace*{0.5cm}
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{0.5cm}
 
-  {\large \textbf{\TitlePageHeader}}
+    {\large \textbf{\TitlePageHeader}}
 
-  \vspace{2cm}
-  {\LARGE \textbf{\ProjectTitle}}
+    \vspace{2cm}
+    {\LARGE \textbf{\ProjectTitle}}
 
-  \vspace{0.2cm}
-  {\ProjectSubTitle}
+    \vspace{0.2cm}
+    {\ProjectSubTitle}
 
-  \vspace{3.5cm}
-  {\large \textbf{Submitted by:}}
+    \vspace{3.5cm}
+    {\large \textbf{Submitted by:}}
 
-  \vspace{0.2cm}
-  {\large \author}
+    \vspace{0.2cm}
+    {\large \author}
 
-  \vspace{0.5cm}
-  {\normalsize \TitlePageSubText}
+    \vspace{0.5cm}
+    {\normalsize \TitlePageSubText}
 
-  \vfill
+    \vfill
 
-  {\large \textbf{Submitted to:}}
+    {\large \textbf{Submitted to:}}
 
-  \vspace{0.2cm}
-  {\normalsize \AdvisorName}
+    \vspace{0.2cm}
+    {\normalsize \AdvisorName}
 
-  \vspace{2cm}
-  {\normalsize \TitlePageFooterText}
-\end{titlepage}
+    \vspace{2cm}
+    {\normalsize \TitlePageFooterText}
+  \end{titlepage}
 
-\newpage
-\thispagestyle{empty}
+  \newpage
+  \thispagestyle{empty}%
+}
+
+\begin{document}
+\maketitle
 \tableofcontents
 
 \chapter{Proposal to Project Report}
