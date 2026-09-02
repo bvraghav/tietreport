@@ -306,7 +306,7 @@ Ready to:
 Compile with `latexmk -pdf sample-report-raw.tex`
 and verify layout matches requirements.
 
-# TITLE
+# Margin Refinement and Maketitle Abstraction
 
 ## Prompt
 
@@ -318,3 +318,57 @@ and verify layout matches requirements.
    other page characteristics of report.
    
 Commit them to git.
+
+## Response
+
+**User refinements applied and committed.**
+
+### Changes Implemented
+
+1. **Refined Geometry Margins**
+   - Changed from uniform 0.65in to asymmetric layout:
+     * inner=1.5in (binding edge)
+     * outer=1in (away from binding)
+     * top=1.8in
+     * bottom=0.85in
+   - Better suited for two-sided printing
+   - Increased binding margin for proper gutter
+
+2. **Maketitle Abstraction**
+   - Moved titlepage from inline `\begin{titlepage}`
+     to `\renewcommand{\maketitle}` wrapper
+   - Simplifies main document structure
+   - Enables clean separation of title logic
+   - Allows easier reuse and customization
+
+3. **Enhanced Page Characteristics**
+   - Added `twoside` and `openright` options
+   - Enabled 12pt base font size
+   - Added visible header rule (0.5pt)
+   - Proper alternating headers for left/right pages
+   - Clean page style configuration
+
+4. **Document Structure Improvements**
+   - Cleaner preamble organization
+   - Better separation of concerns
+   - More maintainable for future CSS class
+
+### Files Updated
+
+- sample-report-raw.tex (complete refactoring)
+- sample-report-raw.pdf (recompiled output)
+- chat.md (this progress record)
+- .gitignore (LaTeX build artifact exclusions)
+
+### Commits
+
+1. Refinement commit: "Refine margins, abstract maketitle,
+   enhance page formatting"
+2. Gitignore commit: Added comprehensive LaTeX exclusion
+   patterns
+
+### Next Step
+
+Proceed to **Step 2**: Strip sample-report-raw.tex to
+create minimal sample-report.tex using
+\documentclass{tietreport}
