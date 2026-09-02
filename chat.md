@@ -229,3 +229,79 @@ Ready to:
 2. Create stripped-down sample-report.tex
 3. Begin tietreport.cls implementation
 
+# Formatting: Margins, Headers, and Chapter Styling
+
+## Prompt
+
+1. Default page margins are very large at the
+   moment. Can they be reduced sensibly by about
+   35-40%? 
+2. Change the chapter to look something like:
+   ``` tex
+   % From page top (after page margins)
+   \raggedleft{%
+     \bfseries\large Chapter {\chapternum}
+
+     \vspace{0.3em}
+     \huge {\chaptertitle}
+
+     \vspace{0.1em}
+     \hrule%
+   }
+   ```
+3. Left leaf header except title page, blank page or
+   chapter page consists of:
+   `{\pagenumber \TitlePageHeader}` on the away side
+   (away from binding edge)
+4. Right leaf header except title page, blank page or
+   chapter page consists of:
+   `{\ProjectTitle \pagenumber}` on the away side (away
+   from binding edge)
+5. The footer is empty, and shall thus be counted into
+   the text real estate.
+
+## Response
+
+**Formatting changes implemented successfully.**
+
+### Changes Made
+
+1. **Margin Reduction**
+   - Added `geometry` package with `margin=0.65in`
+   - Reduces default 1in margins by ~35% (0.65in)
+   - Increases text real estate while maintaining
+     professional appearance
+
+2. **Custom Page Headers**
+   - Added `fancyhdr` package for header configuration
+   - Left pages (even): `page_number TitlePageHeader`
+     on away side (outer margin)
+   - Right pages (odd): `ProjectTitle page_number`
+     on away side (outer margin)
+   - Removed header and footer rules (clean look)
+   - Empty footer to count toward text real estate
+
+3. **Chapter Formatting**
+   - Added `titlesec` package for customization
+   - Format: `\raggedleft` (right-aligned from left)
+   - Label: `Chapter \thechapter` in bold/large
+   - Separator: 0.3em vertical space
+   - Title: `\huge` size
+   - After: 0.1em space + horizontal rule (`\hrule`)
+
+4. **Page Styles**
+   - Title page: `\thispagestyle{empty}` (no header)
+   - Table of contents: `\thispagestyle{empty}`
+   - Chapter opening pages: use empty style
+   - Regular pages: use fancy style with headers
+
+### Packages Added
+
+- `geometry` (margin control)
+- `fancyhdr` (header/footer customization)
+- `titlesec` (chapter title formatting)
+
+### Next Step
+
+Compile with `latexmk -pdf sample-report-raw.tex`
+and verify layout matches requirements.
