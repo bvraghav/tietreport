@@ -656,7 +656,7 @@ prepared.**
 - **Version**: 1.0
 - **License**: MIT
 - **Author**: Raghav B. Venkataramaiyer
-- **Email**: bvraghav.claude@gmail.com
+- **Email**: bvraghav@gmail.com
 - **Repository**: github.com/bvraghav/tietreport
 - **CTAN URL**: ctan.org/pkg/tietreport
 

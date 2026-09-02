@@ -277,6 +277,12 @@ If you use tietreport in academic work, please cite:
 
 ## Changelog
 
+### Version 1.0.1 (2026-09-03)
+
+- Add GitHub Actions CI/CD workflow
+- Automate CTAN package generation on releases
+- Enable streamlined release distribution
+
 ### Version 1.0 (2024-09-03)
 
 - Initial release
