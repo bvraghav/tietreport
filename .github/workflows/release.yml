@@ -2,8 +2,6 @@ name: Release Package (Git Flow)
 
 on:
   push:
-    branches:
-      - master
     tags:
       - '[0-9]+.[0-9]+*'
 
@@ -14,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.1.0
 
       - name: Extract version from tag
         id: version
@@ -85,7 +83,7 @@ jobs:
           EOF
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             tietreport-${{ steps.version.outputs.version }}.tar.gz
