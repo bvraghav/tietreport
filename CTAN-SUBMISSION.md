@@ -86,7 +86,7 @@ include:
 
 **Maintainer:**
 Raghav B. Venkataramaiyer
-<bvraghav.claude@gmail.com>
+<bvraghav@gmail.com>
 
 ### 5. Documentation
 
