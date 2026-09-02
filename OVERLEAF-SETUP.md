@@ -201,7 +201,7 @@ your template.
 - Overleaf Community:
   https://www.overleaf.com/community
 - tietreport GitHub:
-  https://github.com/thapar-latex/tietreport
+  https://github.com/bvraghav/tietreport
 - TIET Support: support@tietreport.org
 
 ## Best Practices

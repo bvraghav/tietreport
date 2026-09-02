@@ -1,49 +1,43 @@
 # tietreport — TIET University Report LaTeX Class
 
-A professional LaTeX document class for
-university project reports, specifically
-designed for Thapar Institute of Engineering
-and Technology (TIET). Provides consistent
-formatting, custom title pages, headers, and
-bibliography management out of the box.
+A professional LaTeX document class for university
+project reports, specifically designed for Thapar
+Institute of Engineering and Technology
+(TIET). Provides consistent formatting, custom title
+pages, headers, and bibliography management out of the
+box.
 
 ## Features
 
 - **Custom Title Page**: Formatted for TIET
-  institutional requirements with course code,
-  student roll numbers, advisor info, and
-  department footer.
-- **Professional Layout**: Two-sided printing
-  with asymmetric margins (binding gutter on
-  inner edge).
-- **Chapter Styling**: Raggedleft chapter
-  titles with horizontal rules and
-  professional spacing.
-- **Alternating Headers**: Automatic left/right
-  page headers with page numbers and project
-  titles on outer margins.
-- **Bibliography Management**: Integrated
-  biblatex with biber backend for modern
-  citation management.
-- **Zotero Integration**: Compatible with
-  Zotero + BetterBibTeX for automatic
-  reference synchronization.
-- **Table of Contents**: Auto-generated TOC
-  with proper chapter/section hierarchy.
-- **Font and Math Support**: amsmath, amssymb,
-  graphicx for professional content.
+  institutional requirements with course code, student
+  roll numbers, advisor info, and department footer.
+- **Professional Layout**: Two-sided printing with
+  asymmetric margins (binding gutter on inner edge).
+- **Chapter Styling**: Raggedleft chapter titles with
+  horizontal rules and professional spacing.
+- **Alternating Headers**: Automatic left/right page
+  headers with page numbers and project titles on outer
+  margins.
+- **Bibliography Management**: Integrated biblatex with
+  biber backend for modern citation management.
+- **Zotero Integration**: Compatible with Zotero +
+  BetterBibTeX for automatic reference synchronization.
+- **Table of Contents**: Auto-generated TOC with proper
+  chapter/section hierarchy.
+- **Font and Math Support**: amsmath, amssymb, graphicx
+  for professional content.
 
 ## Installation
 
 ### Option 1: Local Installation
 
-Copy `tietreport.cls` to your LaTeX project
-directory alongside your document.
+Copy `tietreport.cls` to your LaTeX project directory
+alongside your document.
 
 ### Option 2: System-Wide Installation
 
-Place `tietreport.cls` in your local TEXMF
-tree:
+Place `tietreport.cls` in your local TEXMF tree:
 
 ```
 ~/texmf/tex/latex/tietreport/tietreport.cls
@@ -59,8 +53,7 @@ Install via your package manager:
 tlmgr install tietreport
 ```
 
-Or download from CTAN:
-https://ctan.org/pkg/tietreport
+Or download from CTAN: https://ctan.org/pkg/tietreport
 
 ## Quick Start
 
@@ -132,14 +125,14 @@ Pass options to `\documentclass`:
 \documentclass[twoside,12pt]{tietreport}
 ```
 
-Standard report class options are supported:
-`twoside`, `oneside`, `openright`, `openany`,
-`12pt`, `11pt`, `10pt`, etc.
+Standard report class options are supported: `twoside`,
+`oneside`, `openright`, `openany`, `12pt`, `11pt`,
+`10pt`, etc.
 
 ### Title Page Customization
 
-Override any title page element using these
-commands in your preamble:
+Override any title page element using these commands in
+your preamble:
 
 ```latex
 \TitlePageHeader{...}
@@ -170,8 +163,7 @@ To customize, load geometry after the class:
 
 ### Bibliography Style
 
-Change citation style by passing options to
-biblatex:
+Change citation style by passing options to biblatex:
 
 ```latex
 \usepackage[
@@ -200,10 +192,10 @@ Available styles: `alphabetic`, `authoryear`,
 
 The package includes example documents:
 
-- `sample-report-raw.tex`: Full LaTeX
-  document showing all features
-- `sample-report.tex`: Minimal template with
-  tables, figures, and citations
+- `sample-report-raw.tex`: Full LaTeX document showing
+  all features
+- `sample-report.tex`: Minimal template with tables,
+  figures, and citations
 
 ## Requirements
 
@@ -230,22 +222,20 @@ pdflatex document
 ## Troubleshooting
 
 **"Class file not found"**
-- Ensure `tietreport.cls` is in your document
-  directory or TEXMF path
+- Ensure `tietreport.cls` is in your document directory
+  or TEXMF path
 - Run `texhash` if installed system-wide
 
 **Bibliography not appearing**
-- Verify `\addbibresource{references.bib}` in
-  preamble
+- Verify `\addbibresource{references.bib}` in preamble
 - Ensure `references.bib` exists
 - Run biber (not bibtex)
-- Compile 3 times: pdflatex → biber →
-  pdflatex → pdflatex
+- Compile 3 times: pdflatex → biber → pdflatex →
+  pdflatex
 
 **Missing citations**
 - Check citation keys match .bib file exactly
-- Use `\cite{}`, `\textcite{}`, or
-  `\parencite{}`
+- Use `\cite{}`, `\textcite{}`, or `\parencite{}`
 - Verify biblatex options in preamble
 
 ## Documentation
@@ -261,14 +251,12 @@ MIT License. See LICENSE file for details.
 
 ## Contributing
 
-Contributions welcome! Submit issues or
-pull requests to:
-https://github.com/thapar-latex/tietreport
+Contributions welcome! Submit issues or pull requests
+to: https://github.com/bvraghav/tietreport
 
 ## Citation
 
-If you use tietreport in academic work,
-please cite:
+If you use tietreport in academic work, please cite:
 
 ```bibtex
 @software{tietreport2024,
@@ -283,9 +271,8 @@ please cite:
 ## Support
 
 - GitHub Issues:
-  https://github.com/thapar-latex/tietreport/issues
-- CTAN Package:
-  https://ctan.org/pkg/tietreport
+  https://github.com/bvraghav/tietreport/issues
+- CTAN Package: https://ctan.org/pkg/tietreport
 - Email: support@tietreport.org
 
 ## Changelog

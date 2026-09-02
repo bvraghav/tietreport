@@ -373,6 +373,104 @@ Proceed to **Step 2**: Strip sample-report-raw.tex to
 create minimal sample-report.tex using
 \documentclass{tietreport}
 
+# Step 3: Create tietreport.cls Document Class
+
+## Prompt
+
+Create `tietreport.cls` to match @sample-report.tex as
+an equivalent of @sample-report-raw.tex.  In the
+process make sure that,
+
+1. Options passed to
+   `\documentclass[OPTIONS...]{tietreport}` as
+   forwarded to `\LoadClass{report}`
+2. Use package internal variables to wire the vars from
+   preamble to titlepage.
+3. While creating the internal variables document them
+   properly.
+4. Keep the `\RequirePackage` command coupled with the
+   respective settings in a comment guarded block.
+   Document the intent inline (or in block if
+   necessary) within the guarded block.
+5. Use column-width 55 to fill and wrap text.
+
+Finally, give me a moment to audit and then fill
+@chat.md before committing to git.
+
+## Response
+
+**Step 3 completed: tietreport.cls created and
+audited.**
+
+### Class Structure
+
+1. **Option Forwarding**
+   - `\DeclareOption*` captures all options
+   - `\PassOptionsToClass` forwards to report class
+   - Enables: `[twoside,12pt,openright]` etc.
+
+2. **Package Integration**
+   - geometry: margin and layout control
+   - fancyhdr: alternating headers with page nums
+   - titlesec: custom chapter formatting
+   - hyperref, graphicx, amsmath, amssymb
+   - Each package in separate comment-guarded block
+   - Inline documentation of intent
+
+3. **Internal Variables (@tp prefix)**
+   - `\@tpHeader`: Course/lab header
+   - `\@tpTitle`: Main project title
+   - `\@tpSubTitle`: Subtitle/description
+   - `\@tpAuthors`: Student list (4 with roll #)
+   - `\@tpSubText`: Degree/year/group info
+   - `\@tpAdvisor`: Faculty guide name
+   - `\@tpFooter`: Evaluation/dept/institution
+   - All documented with purpose inline
+
+4. **Public API Commands**
+   - `\TitlePageHeader{...}`: Set header text
+   - `\ProjectTitle{...}`: Set project title
+   - `\ProjectSubTitle{...}`: Set subtitle
+   - `\author{...}`: Override: set authors
+   - `\TitlePageSubText{...}`: Set degree/group
+   - `\AdvisorName{...}`: Set faculty advisor
+   - `\TitlePageFooterText{...}`: Set footer
+
+5. **Maketitle Implementation**
+   - Custom titlepage using @tp variables
+   - Centered layout with institutional branding
+   - Blank page after title (for TOC)
+   - Equivalent to sample-report-raw.tex
+
+### Code Quality
+
+- 55-character line wrapping throughout
+- Well-commented blocks with section headers
+- Clear separation: packages, variables, commands
+- @tp prefix marks internal implementation
+- User-facing commands are public (\TitlePageXxx)
+- Follows LaTeX style conventions
+
+### Verification
+
+- sample-report.tex uses \documentclass{tietreport}
+- sample-report.tex identical content to
+  sample-report-raw.tex
+- Preamble stripped to just variable setters
+- Class provides all formatting and structure
+- Audit complete and verified
+
+### Files Created/Modified
+
+- tietreport.cls (280 lines, new document class)
+- chat.md (this summary)
+
+### Next Step
+
+Commit tietreport.cls and updated chat.md. Then
+proceed to Step 4: Audit PDF output and verify
+tietreport.cls produces equivalent to sample-report-raw
+
 # Step 4: Enhance sample-report.tex with LaTeX Features
 
 ## Prompt
@@ -616,110 +714,6 @@ prepared.**
 - Zotero integration for bibliography
 - Professional document preparation system
 
-
-# Step 3: Create tietreport.cls Document Class
-
-## Prompt
-
-Create `tietreport.cls` to match @sample-report.tex as
-an equivalent of @sample-report-raw.tex.  In the
-process make sure that,
-
-1. Options passed to
-   `\documentclass[OPTIONS...]{tietreport}` as
-   forwarded to `\LoadClass{report}`
-2. Use package internal variables to wire the vars from
-   preamble to titlepage.
-3. While creating the internal variables document them
-   properly.
-4. Keep the `\RequirePackage` command coupled with the
-   respective settings in a comment guarded block.
-   Document the intent inline (or in block if
-   necessary) within the guarded block.
-5. Use column-width 55 to fill and wrap text.
-
-Finally, give me a moment to audit and then fill
-@chat.md before committing to git.
-
-## Response
-
-**Step 3 completed: tietreport.cls created and
-audited.**
-
-### Class Structure
-
-1. **Option Forwarding**
-   - `\DeclareOption*` captures all options
-   - `\PassOptionsToClass` forwards to report class
-   - Enables: `[twoside,12pt,openright]` etc.
-
-2. **Package Integration**
-   - geometry: margin and layout control
-   - fancyhdr: alternating headers with page nums
-   - titlesec: custom chapter formatting
-   - hyperref, graphicx, amsmath, amssymb
-   - Each package in separate comment-guarded block
-   - Inline documentation of intent
-
-3. **Internal Variables (@tp prefix)**
-   - `\@tpHeader`: Course/lab header
-   - `\@tpTitle`: Main project title
-   - `\@tpSubTitle`: Subtitle/description
-   - `\@tpAuthors`: Student list (4 with roll #)
-   - `\@tpSubText`: Degree/year/group info
-   - `\@tpAdvisor`: Faculty guide name
-   - `\@tpFooter`: Evaluation/dept/institution
-   - All documented with purpose inline
-
-4. **Public API Commands**
-   - `\TitlePageHeader{...}`: Set header text
-   - `\ProjectTitle{...}`: Set project title
-   - `\ProjectSubTitle{...}`: Set subtitle
-   - `\author{...}`: Override: set authors
-   - `\TitlePageSubText{...}`: Set degree/group
-   - `\AdvisorName{...}`: Set faculty advisor
-   - `\TitlePageFooterText{...}`: Set footer
-
-5. **Maketitle Implementation**
-   - Custom titlepage using @tp variables
-   - Centered layout with institutional branding
-   - Blank page after title (for TOC)
-   - Equivalent to sample-report-raw.tex
-
-### Code Quality
-
-- 55-character line wrapping throughout
-- Well-commented blocks with section headers
-- Clear separation: packages, variables, commands
-- @tp prefix marks internal implementation
-- User-facing commands are public (\TitlePageXxx)
-- Follows LaTeX style conventions
-
-### Verification
-
-- sample-report.tex uses \documentclass{tietreport}
-- sample-report.tex identical content to
-  sample-report-raw.tex
-- Preamble stripped to just variable setters
-- Class provides all formatting and structure
-- Audit complete and verified
-
-### Files Created/Modified
-
-- tietreport.cls (280 lines, new document class)
-- chat.md (this summary)
-
-### Next Step
-
-Commit tietreport.cls and updated chat.md. Then
-proceed to Step 4: Audit PDF output and verify
-tietreport.cls produces equivalent to sample-report-raw
-
 # TITLE
 
 ## Prompt
-
-1. Make report.tex into 55-column-width document.
-2. Add a table and a couple of images, to showcase the
-   power of LaTeX.
-3. Finally, add a few references and citations too.

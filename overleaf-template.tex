@@ -1,12 +1,18 @@
 \documentclass{tietreport}
 
+% Import images
+\usepackage{graphicx}
+
 % Bibliography configuration
 \usepackage[
+  date=year,
   style=alphabetic,
   backend=biber,
   sorting=nty,
   maxnames=5,
   minnames=3,
+  maxalphanames=4,
+  minalphanames=3,
   backref=true,
   doi=false,
   isbn=false,
@@ -55,10 +61,11 @@
 % Evaluation period and department info
 \TitlePageFooterText{{%
     \large Mid-Semester Evaluation \\[0.2cm]
-    \bfseries Your Department Name%
+    \bfseries Computer Science and Engineering
+    Department%
   } \\[0.15cm]
-  Thapar Institute of Engineering and
-  Technology, Patiala%
+  Thapar Institute of Engineering and Technology,
+  Patiala%
 }
 
 %% ==================================================

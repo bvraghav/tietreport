@@ -93,10 +93,10 @@ Raghav B. Venkataramaiyer
 Provide links and information:
 
 **Repository:**
-https://github.com/thapar-latex/tietreport
+https://github.com/bvraghav/tietreport
 
 **Bug Reports:**
-https://github.com/thapar-latex/tietreport/issues
+https://github.com/bvraghav/tietreport/issues
 
 **Documentation:**
 See README.md included with package
