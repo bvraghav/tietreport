@@ -16,7 +16,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tietreport}[2026/09/03 TIET Report %
-  Class v1.0.3]
+  Class v1.0.4]
 
 %% Forward all options to report class
 \DeclareOption*{\PassOptionsToClass%
