@@ -1,0 +1,352 @@
+\documentclass[twoside,12pt,openright]{report}
+\usepackage[
+  inner=1.5in,
+  outer=1in,
+  top=1.8in,
+  bottom=0.85in
+]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+% Define Vars
+% -----------------------------------------------------
+% Title Page Header
+\newcommand{\TitlePageHeader}{%
+  UCS 503 Software Engineering Project Report%
+}
+
+% Project Title
+\newcommand{\ProjectTitle}{Proposal to Final}
+
+% Project SubTitle
+\newcommand{\ProjectSubTitle}{How to Write a Project Report}
+
+% Authors
+\renewcommand{\author}{%
+\texttt{102XXXXXXX} {Name Title} \\
+\texttt{102XXXXXXX} {Name Title} \\
+\texttt{102XXXXXXX} {Name Title} \\
+\texttt{102XXXXXXX} {Name Title} \\
+}
+
+% Title Page SubText
+\newcommand{\TitlePageSubText}{%
+  Group: \texttt{3XXX} BE Third Year, CSE%
+}
+
+% Advisor Name
+\newcommand{\AdvisorName}{Dr. NAME OF THE ADVISOR}
+
+% Title Page Footer Text
+\newcommand{\TitlePageFooterText}{{%
+    \large Mid-Semester Evaluation \\[0.2cm]
+    \bfseries Computer Science and Engineering
+    Department%
+  } \\[0.15cm]
+  Thapar Institute of Engineering and
+  Technology, Patiala%
+}
+
+% -----------------------------------------------------
+
+% Configure page headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\thepage \quad \TitlePageHeader}
+\fancyhead[RO]{\ProjectTitle \quad \thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Configure chapter formatting
+\titleformat{\chapter}[display]
+  {\raggedleft\bfseries\large}
+  {Chapter \thechapter}
+  {0.3em}
+  {\huge}
+  [\vspace{0.1em}\hrule]
+
+% Use plain page style for chapter opening pages
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+\assignpagestyle{\chapter}{empty}
+
+
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{0.5cm}
+
+    {\large \textbf{\TitlePageHeader}}
+
+    \vspace{2cm}
+    {\LARGE \textbf{\ProjectTitle}}
+
+    \vspace{0.2cm}
+    {\ProjectSubTitle}
+
+    \vspace{3.5cm}
+    {\large \textbf{Submitted by:}}
+
+    \vspace{0.2cm}
+    {\large \author}
+
+    \vspace{0.5cm}
+    {\normalsize \TitlePageSubText}
+
+    \vfill
+
+    {\large \textbf{Submitted to:}}
+
+    \vspace{0.2cm}
+    {\normalsize \AdvisorName}
+
+    \vspace{2cm}
+    {\normalsize \TitlePageFooterText}
+  \end{titlepage}
+
+  \newpage
+  \thispagestyle{empty}%
+}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Proposal to Project Report}
+
+\section{Overview}
+
+Transforming your proposal into a final project report is an incremental process
+of replacing \textbf{intentions} with \textbf{results}. Since a proposal serves as
+a roadmap, the final report becomes the record of the journey taken.
+
+\subsection{Expanding the Core Structure}
+
+To move from proposal to report, you must shift your perspective from what you
+\textit{will} do to what you \textit{have} done.
+
+\begin{itemize}
+  \item \textbf{Introduction \& Objectives:} Keep these sections but update them
+    to reflect the final state of the project. If your objectives shifted during
+    development, explain why.
+  \item \textbf{Methodology to Implementation:} In a proposal, the methodology is
+    a plan. In a report, this expands into a detailed \textbf{Implementation}
+    section. For STEM projects, this includes your final system architecture,
+    code modules, and integration workflows.
+  \item \textbf{Results \& Analysis:} This is an entirely new section. Replace
+    your ``Deliverables'' list from the proposal with actual raw data,
+    prototypes, and analyzed findings.
+  \item \textbf{Conclusion \& Future Work:} Summarize the impact of your results
+    and suggest how others might improve upon your work.
+\end{itemize}
+
+\subsection{Transitioning STEM Technical Content}
+
+For technical projects like AR or 3D modeling, your methodology evolves into
+technical documentation.
+
+\begin{itemize}
+  \item \textbf{From Plan to Architecture:} Move from specifying intended tools
+    (e.g., ARCore, Unity) to documenting the final \textbf{System Architecture}
+    used.
+  \item \textbf{Documenting Development:} Expand on how you handled surface
+    detection, asset management, and UI design. Replace ``proposed'' scaling
+    methods with documentation of your actual 1:1 metric scaling implementation.
+  \item \textbf{Validation:} Your proposal lists testing goals; your report must
+    provide the actual results of \textbf{Unit Testing}, \textbf{Performance
+    Benchmarking} (like actual FPS achieved), and \textbf{User Acceptance
+    Testing} (UAT).
+\end{itemize}
+
+\subsection{Incremental Development Steps}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Phase} & \textbf{Proposal Content} & \textbf{Report Evolution} \\
+  \hline
+  Initial & SMART Objectives & Validated goals; noted deviations. \\
+  \hline
+  Mid-Project & Methodology \& Tools & Detailed System Design and code structure. \\
+  \hline
+  Execution & Proposed Timeline & Actual log of milestones reached. \\
+  \hline
+  Final & Anticipated Risks & Evaluation \& Testing results. \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Pro-Tips for the Final Report}
+
+\begin{itemize}
+  \item \textbf{Density Over Fluff:} Just as in the proposal, professors value
+    clear, concise information over high word counts.
+  \item \textbf{Visual Documentation:} Replace the proposal's flowchart or table
+    with actual screenshots of your software, photos of your setup, or graphs
+    of your data.
+  \item \textbf{Addressing Constraints:} Revisit the constraints you identified
+    (like lighting or safety) and discuss how you successfully mitigated them in
+    the final build.
+\end{itemize}
+
+\section{More Nuanced Perspective}
+
+Transforming an academic proposal into a final project report is an incremental
+process of replacing planned intentions with documented results. Based on the
+provided guide, here is a holistic overview of how to modify and improvise upon
+your document through to completion:
+
+\subsection{Shift from Intent to Execution}
+
+The most significant change is moving from a ``roadmap'' of what you intend to
+do to a record of what was actually achieved.
+
+\begin{itemize}
+  \item \textbf{Methodology to System Architecture:} In a STEM project, your
+    methodology evolves from a plan into a detailed description of your final
+    \textbf{System Architecture} and \textbf{Tech Stack}.
+  \item \textbf{Module Development:} For the final report, expand on how you
+    implemented specific features like \textbf{Surface Detection},
+    \textbf{Asset Management}, and \textbf{UI Design}.
+  \item \textbf{Timeline to Project History:} Convert your weekly task breakdown
+    into a summary of project milestones, noting any shifts in scope or timing.
+\end{itemize}
+
+\subsection{Add Validated Results and Testing}
+
+A proposal only anticipates outcomes, whereas a report must validate them
+through rigorous testing.
+
+\begin{itemize}
+  \item \textbf{Performance Benchmarking:} Include technical data such as
+    \textbf{Frames Per Second (FPS)} and \textbf{latency} measurements to prove
+    system stability.
+  \item \textbf{User Acceptance Testing (UAT):} Document the results of
+    ``drift'' analysisჲ”checking if virtual objects remain stable in their
+    environment over time.
+  \item \textbf{Unit Testing:} Provide a log of individual feature tests, such
+    as verifying if rotation or placement logic worked as intended.
+\end{itemize}
+
+\subsection{Refine and Expand Core Sections}
+
+\begin{itemize}
+  \item \textbf{Introduction/Problem Statement:} Refine this section (ideally
+    250--400 words) to ensure it accurately reflects the final problem addressed
+    by your completed work.
+  \item \textbf{Objectives:} Revisit your \textbf{SMART objectives}. In your
+    report, state clearly whether each objective was met, partially met, or
+    modified.
+  \item \textbf{Resources:} Update your resource list to reflect what was
+    actually used, such as specific \textbf{AR libraries} (ARCore, ARKit) or
+    hardware like \textbf{LiDAR-enabled devices}.
+\end{itemize}
+
+\subsection{Address Real-World Constraints}
+
+While the proposal mentions anticipated risks, the final report should discuss
+how you managed them during development.
+
+\begin{itemize}
+  \item \textbf{Environmental Constraints:} Discuss how the final system
+    performed in low-light conditions or on reflective surfaces.
+  \item \textbf{Technical Challenges:} Detail how you solved issues like
+    \textbf{coordinate mapping} (1:1 scaling) or \textbf{physics engine}
+    clipping.
+\end{itemize}
+
+\subsection{Final Formatting Adjustments}
+
+\begin{itemize}
+  \item \textbf{Tone:} Maintain a professional tone using active verbs to
+    describe your completed actions.
+  \item \textbf{Density:} Ensure the final document remains dense with
+    information rather than ``fluff'', focusing on proving the project's
+    academic or scientific soundness.
+  \item \textbf{Visuals:} Replace the proposal's placeholder tables with final
+    data visualizations, flowcharts of your actual technical workflow, and
+    screenshots of the finished product.
+\end{itemize}
+
+\section{Example Details}
+
+These are the ``meat'' of your final report and transition your proposal's
+``Methodology'' into a documented reality.
+
+\subsection{Section: Technical System Architecture}
+
+In the proposal, you listed tools. In the report, you explain how they interact.
+You should replace your methodology flowchart with a high-level system diagram.
+
+\textbf{Drafting Template:}
+
+\begin{itemize}
+  \item \textbf{The Tech Stack:} ``The project was developed using \textbf{Unity
+    2022.3} as the primary engine, utilizing the \textbf{ARCore SDK} for
+    spatial mapping. C\# was used for logic scripting, while \textbf{Blender}
+    served as the pipeline for 1:1 metric-scale 3D modeling.''
+  \item \textbf{The Workflow:} Describe the data flow. ``The system initiates by
+    polling the device camera for feature points. Once a horizontal plane is
+    detected via \textbf{Raycasting}, the coordinate system is anchored to a
+    0,0,0 origin point to ensure stability.''
+\end{itemize}
+
+\subsection{Section: Module-by-Module Implementation}
+
+Break down the ``doing'' part of your project into logical modules. This proves
+the complexity of your work.
+
+\begin{itemize}
+  \item \textbf{Module A: Environment Scanning \& Plane Detection}
+    \begin{itemize}
+      \item \textit{Details:} How did you handle lighting? Did you use Depth
+        APIs?
+      \item \textit{Improvement:} ``While the proposal suggested basic plane
+        detection, the implementation utilized \textbf{Light Estimation APIs}
+        to dynamically adjust the shaders on virtual objects, increasing
+        realism.''
+    \end{itemize}
+  \item \textbf{Module B: Interaction Logic}
+    \begin{itemize}
+      \item \textit{Details:} How does the user move or rotate objects?
+      \item \textit{Improvement:} ``We implemented a \textbf{Gesture
+        Recognition} module that translates screen-space touch inputs into
+        world-space transformations, restricted by collision boxes to prevent
+        `ghosting' through walls.''
+    \end{itemize}
+\end{itemize}
+
+\subsection{Section: Testing and Validation (The Output)}
+
+This is the most critical addition for a final report. Use the SMART objectives
+from your proposal to create a ``Pass/Fail'' or ``Result'' table.
+
+\textbf{Key Metrics to Include:}
+
+\begin{itemize}
+  \item \textbf{Performance Benchmarking:} ``The application maintained a
+    consistent \textbf{55--60 FPS} on a Samsung S22, though performance dropped
+    to 40 FPS in low-light environments due to increased CPU load from
+    feature-point searching.''
+  \item \textbf{Drift Analysis:} ``In a 10-minute stress test, the virtual
+    object's anchor point drifted by less than 2cm, meeting our accuracy
+    objective.''
+\end{itemize}
+
+\chapter{Conclusion}
+
+To make this specific to your actual project, start by looking into:
+
+\begin{enumerate}
+  \item \textbf{What is the specific title or goal of your project?}
+    (e.g., An AR furniture app? A data analysis tool?)
+  \item \textbf{What was the hardest technical hurdle you faced?}
+    (I can help you write the ``Challenges \& Mitigations'' section for this).
+\end{enumerate}
+
+\end{document}

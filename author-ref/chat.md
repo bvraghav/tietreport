@@ -713,7 +713,3 @@ prepared.**
 - Overleaf users have easy access
 - Zotero integration for bibliography
 - Professional document preparation system
-
-# TITLE
-
-## Prompt

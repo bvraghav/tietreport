@@ -192,10 +192,15 @@ Available styles: `alphabetic`, `authoryear`,
 
 The package includes example documents:
 
-- `sample-report-raw.tex`: Full LaTeX document showing
+- `examples/sample-report-raw.tex`: Full LaTeX document showing
   all features
-- `sample-report.tex`: Minimal template with tables,
-  figures, and citations
+- `examples/sample-report.tex`: Minimal template with tables,
+  figures, and citations.  You’ll have to manually
+  copy the images from `author-ref/` into the
+  `examples/` folder.  This is for convenience of the
+  distribution pipeline.
+- `examples/overleaf-template.tex`: Sample template for
+  getting started with overleaf.
 
 ## Requirements
 
@@ -241,9 +246,11 @@ pdflatex document
 ## Documentation
 
 Full documentation available in:
-- `tietreport.cls`: Inline code comments
-- `sample-report.tex`: Working example
-- `sample-report-raw.tex`: Feature showcase
+- `tietreport.cls`: Inline code comments.
+- `examples/sample-report.tex`: Working example.
+- `examples/sample-report-raw.tex`: Feature showcase.
+- `examples/overleaf-template.tex`: Getting started
+  example.
 
 ## License
 
@@ -273,7 +280,7 @@ If you use tietreport in academic work, please cite:
 - GitHub Issues:
   https://github.com/bvraghav/tietreport/issues
 - CTAN Package: https://ctan.org/pkg/tietreport
-- Email: support@tietreport.org
+- Email: bvraghav -at- gmail -dot- com
 
 ## Changelog
 
