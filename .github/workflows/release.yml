@@ -2,13 +2,15 @@ name: Release Package (Git Flow)
 
 on:
   push:
-    tags:
-      - '[0-9]+.[0-9]+*'
+    branches:
+      - master
 
 jobs:
   package:
     name: Build CTAN Package
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
